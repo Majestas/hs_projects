@@ -1,8 +1,42 @@
 <!DOCTYPE html>
   <head>
-    <title>Shakespearan Greed</title>
+    <title>Shakespearean Greed</title>
+	<link rel="stylesheet" type="text/css" href="macbeth.css">
+	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   </head>
   <body>
-    <p>Testing 123</p>
+	<div id="content">
+		<div id="heading">
+			<h3>Shakespearean Greed</h3>
+			<h6>An adventure filled with hard decisions.</h6>
+		</div>
+		<div id="inter">
+			<div id="info">
+				<p>
+					You are the average individual. That is all you will ever be, unless you do something. Unless you take action and secure your own fate. What will it be?
+				</p>
+			</div>
+			<div id="question"></div>
+			<div id="answers" class="button">
+				<div id="option1" class="button"></div>
+				<div id="option2" class="button"></div>
+				<div id="option3" class="button"></div>
+			</div>
+			<div id="status">
+				<h5>Your status:</h5>
+				<div id="position"></div>
+			</div>
+		</div>
+	</div>
   </body>
   
+  body {
+	background: #eeeeee;
+	color: #000000;
+}
+#content {
+	margin: 5%
+	border-color: #000000;
+}
+	
