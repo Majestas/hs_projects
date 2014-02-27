@@ -1,416 +1,442 @@
 <!DOCTYPE html>
-  <head>
-    <title>Shakespearean Greed</title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<style type="text/css">
-		body {
-			background: #ffffff;
-			color: #000000;
-			font-size: 12px;
-		}
-		#content {
-			margin: 5%;
-			border: 1px solid #000000;
-			border-radius: 5px;
-			padding: 5px;
-		}
-		button {
-			border: 1px solid #000000;
-			border-radius: 1px;
-			margin: 2px;
-		}
-		button:hover {
-			opacity: 0.5;
-			background-color: #f7f7f7;
-		}
-		#option1 {
-			height: 14px;
-			padding: 1px;
-		}
-		#option2 {
-			height: 14px;
-			padding: 1px;
-		}
-		#option3 {
-			height: 14px;
-			padding: 1px;
-		}
-		#heading {
-			text-align: center;
-		}
-		#title {
-			font-size: 20px;
-			style: bold;
-		}
-		#subtitle {
-			font-size: 15px;
-			style: bold;
-		}
-		#next {
-			width: 40px;
-			text-align: center;
-	</style>
-	<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-	<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-  </head>
-  <body>
-	<div id="content">
-		<div id="heading">
-			<div id="title">Shakespearean Greed</div>
-			<div id="subtitle">An adventure filled with hard decisions.</div>
-		</div>
-		<br></br>
-		<div id="inter">
-			<div id="info"></div>
-			<div id="question"></div>
-			<div id="error"></div>
-			<form>
-				<div id="answers">
-					<input type="button" id="option1" onClick="click1()"></input>
-					<input type="button" id="option2" onClick="click2()"></input>
-					<input type="button" id="option3" onClick="click3()"></input>
-				</div>
-				<input type="button" id="next" value="Next" onclick="next()">
-				</input>
-			</form>
-		</div>
-	</div>
-	<script type="text/javascript">
-		//<![CDATA[
-			var greed = 0;
-			var ans1 = " ";
-			var ans2 = " ";
-			var ans3 = " ";
-			var stage = true;
-			var length = 0;
-			var end = 0;
-			document.getElementById('info').innerHTML="You are the average individual. You work hours on end in a dead-end job. Without change, you will do this for the rest of your life. Click next to continue.";
-			function colorChange (greedNum) {
-				switch (greedNum) {
-					case 1:
-						$('body').css('background-color','#eeeeee');
-						$('body').css('color','#110000');
-						$('#option, button').css('border','1px solid #110000');
-						break;
-					case 2:
-						$('body').css('background-color','#dddddd');
-						$('body').css('color','#220000');
-						$('#option, button').css('border','1px solid #220000');
-						break;
-					case 3:
-						$('body').css('background-color','#cccccc');
-						$('body').css('color','#330000');
-						$('#option, button').css('border','1px solid #330000');
-						break;
-					case 4:
-						$('body').css('background-color','#bbbbbb');
-						$('body').css('color','#440000');
-						$('#option, button').css('border','1px solid #440000');
-						break;
-					case 5:
-						$('body').css('background-color','#aaaaaa');
-						$('body').css('color','#550000');
-						$('#option, button').css('border','1px solid #550000');
-						document.getElementById('info').innerHTML="You are starting to move up in the world. Rumors tell a promotion might be in store for you. Nice perks begin to spring up, however many people around begin to look at you differently.";
-						break;
-					case 6:
-						$('body').css('background-color','#999999');
-						$('body').css('color','#660000');
-						$('#option, button').css('border','1px solid #660000');
-						break;
-					case 7:
-						$('body').css('background-color','#888888');
-						$('body').css('color','#770000');
-						$('#option, button').css('border','1px solid #770000');
-						break;
-					case 8:
-						$('body').css('background-color','#777777');
-						$('body').css('color','#880000');
-						$('#option, button').css('border','1px solid #880000');
-						break;
-					case 9:
-						$('body').css('background-color','#666666');
-						$('body').css('color','#990000');
-						$('#option, button').css('border','1px solid #990000');
-						break;
-					case 10:
-						$('body').css('background-color','#555555');
-						$('body').css('color','#aa0000');
-						$('#option, button').css('border','1px solid #aa0000');
-						document.getElementById('info').innerHTML="A few promotions have come your way and you are eagerly moving up the corperate ladder. You walk into work everyday in a designer suit. But you are starting to feel the power in your hands and love it. You want more. A desire for more.";
-						break;
-					case 11:
-						$('body').css('background-color','#444444');
-						$('body').css('color','#bb0000');
-						$('#option, button').css('border','1px solid #bb0000');
-						break;
-					case 12:
-						$('body').css('background-color','#333333');
-						$('body').css('color','#cc00000');
-						$('#option, button').css('border','1px solid #cc0000');
-						break;
-					case 13:
-						$('body').css('background-color','#222222');
-						$('body').css('color','#dd00000');
-						$('#option, button').css('border','1px solid #dd0000');
-						break;
-					case 14:
-						$('body').css('background-color','#111111');
-						$('body').css('color','#ee00000');
-						$('#option, button').css('border','1px solid #ee0000');
-						break;
-					default:
-						$('body').css('background-color','#000000');
-						$('body').css('color','#ff0000');
-						$('#option, button').css('border','1px solid #ff0000');
-						break;
-				}
-			}
-			function click1() {
-				if (stage) {
-					document.getElementById('option1').innerHTML="";
-					document.getElementById('option2').innerHTML="";
-					document.getElementById('option3').innerHTML="";
-					document.getElementById('question').innerHTML=ans1;
-					stage = false;
-				}
-			}
-			function click2() {
-				if (stage) {
-					document.getElementById('option1').innerHTML="";
-					document.getElementById('option2').innerHTML="";
-					document.getElementById('option3').innerHTML="";
-					document.getElementById('question').innerHTML=ans2;
-					greed += 1;
-					colorChange(greed);
-					stage = false;
-				}
-			}
-			function click3() {
-				if (stage) {
-					document.getElementById('option1').innerHTML="";
-					document.getElementById('option2').innerHTML="";
-					document.getElementById('option3').innerHTML="";
-					document.getElementById('question').innerHTML=ans3;
-					greed += 2;
-					colorChange(greed);
-					stage = false;
-				}
-			}
-			function next() {
-				if (stage) {
-					if (greed >=15) {
-						end = length;
-						length = 21;
-					}
-					if (length > 20) {
-						stage=false;
-						if (end <= 10 && end !==0) {
-							document.getElementById('info').innerHTML="The grin you wore on yor face became your death sentance. Dozens looked up to you and say evil behind your eyes. At 33, your life was ended. By who? It is unclear because any number of your employees had the motivation.";
-						} else if (end <=19) {
-							document.getElementById('info').innerHTML="While at first, it was well consealed, your greed began to show through. A sudden allergic reaction caused your death at 57. While never being allergic to anything before, it is unclear as to what exactly killed one. One thing is for certain: everyone cheered at the news of your passing.";
-						} else if (end===0 && greed<=5) {
-							document.getElementById('info').innerHTML="Years passed and you quietly spent your days helping others, as always. When you passed in your speel, everyone was devestated. Your funeral had a record attendance and you will be missed by all.";
-						} else if (end===0 && greed<=10) {
-							document.getElementById('info').innerHTML="You were remembered fondly as one who did not ask for much. Every now and then, you would help yourself, but everyone does. You lived to see a ripe old age, which was celebrated to those around you.";
-						} else {
-							document.getElelmentById('info').innerHTML="Greed was in the depths of your soul, but you suppressed it as much as possible. While there were few around you that loved you, you did not make many enemies in your life time and a handful of people will miss you.";
-						}
-					} else {
-						stage=true;
-						switch(length) {
-							case 0:
-								document.getElementById('question').innerHTML="You arrive at work and park in the parking garage. As you walk down the stairs, you notice $100 lying on the concrete.";
-								document.getElementById('option1').innerHTML="Pick it up and bring it to the secretary, someone will be missing it and claim it.";
-								document.getElementById('option2').innerHTML="Bring it up to your office and announce that you found the money. If the individual goes to you, you will at least get some credit and maybe some reward.";
-								document.getElementById('option3').innerHTML="If someone were to need this money, they would have already found it. Put it in your pocket and use to buy yourself something nice.";
-								ans1 = "You bring it to the secratery, who gladly takes it. Later, you ask if someone claimed it and the secratery tells you, 'Yes, its owner was found.'";
-								ans2 = "Your boss quietly comes up to you and informs you it was his money. You give him the $100 dollars. The next day, a large candy bar sits on your desk: a reward from your boss.";
-								ans3 = "The day goes by uneventfully. On your way home, you stop by the nearest walmart and get yourself a nice watch, which your colleges notice the next day.";
-								break;
-							case 1:
-								document.getElementById('question').innerHTML="The mailman came by and put a few envolopes into your mailbox. You pick up the letters and bring them inside. Opening the first one, there is a small letter and 3 $20 bills. The first line of the letter reads, 'Dear Steve.' You look at the envolope and realize it is addressed to your neighbor.";
-								document.getElementById('option1').innerHTML="Replace the money and letter and walk the letter over to your neighbor in person.";
-								document.getElementById('option2').innerHTML="You only need $20 for new book you want. Just take 1 of the $20 bills out and replace the rest in the envolope. Your neightbor still gets their reward and you get the book you want.";
-								document.getElementById('option3').innerHTML="Toss out the envolope, and keep the $60 for yourself. Steve has more money than you, so he will not mind.";
-								ans1 = "Your neighbor smiles warmly when he sees you. He is an older gentleman who does not get much company, and getting to talk to you makes his day.";
-								ans2 = "You place the envolope into Steve's mailbox the next morning and never think about it again.";
-								ans3 = "The $60 was well spent, while Steven never suspected a thing. You got the best part of the deal.";
-								break;
-							case 2:
-								document.getElementById('question').innerHTML="A large gift basket was sent to your boss.  The card was missing. Your boss asked you if you know who sent it.";
-								document.getElementById('option1').innerHTML="You overheard two of your co-workers talking about it earlier, so you give your boss their names. They deserve the credit.";
-								document.getElementById('option2').innerHTML="If they did not leave a card, they clearly do not want credit. You just tell your boss you do not know, so no one gets special treatment.";
-								document.getElementById('option3').innerHTML="You could use some brownie points, so you tell your boss you sent it. There is no way anyone can disprove that.";
-								ans1 = "The next day, you find that both of your co-workers were given promotions because of the gift basket, all thanks to you giving them credit.";
-								ans2 = "Your boss never mentioned it again, but he was in a generous mood for the next day.";
-								ans3 = "Your boss smiles on you and says that you should get a raise for being so nice to him.";
-								break;
-							case 3:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 4:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 5:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 6:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 7:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 8:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 9:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 10:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 11:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 12:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 13:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 14:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 15:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 16:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 17:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 18:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							case 19:
-								document.getElementById('question').innerHTML="";
-								document.getElementById('option1').innerHTML="";
-								document.getElementById('option2').innerHTML="";
-								document.getElementById('option3').innerHTML="";
-								ans1 = "";
-								ans2 = "";
-								ans3 = "";
-								break;
-							default:
-								document.getElementById('question').innerHTML="ERROR";
-								document.getElementById('option1').innerHTML="ERROR";
-								document.getElementById('option2').innerHTML="ERROR";
-								document.getElementById('option3').innerHTML="ERROR";
-								ans1 = "ERROR";
-								ans2 = "ERROR";
-								ans3 = "ERROR";
-						}
-					}
-				}
-			}
-		//]]>
-	</script>
-  </body>
+ <head>
+   <title>Shakespearean Greed</title>
+   <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+   <style type="text/css">
+       body {
+           background: #ffffff;
+           color: #000000;
+           font-size: 12px;
+       }
+       #content {
+           margin: 5%;
+           border: 1px solid #000000;
+           border-radius: 5px;
+           padding: 5px;
+       }
+       button {
+           border: 1px solid #000000;
+           border-radius: 1px;
+           margin: 2px;
+       }
+       button:hover {
+           opacity: 0.5;
+           background-color: #f7f7f7;
+       }
+       #option1 {
+           height: 14px;
+           padding: 1px;
+       }
+       #option2 {
+           height: 14px;
+           padding: 1px;
+       }
+       #option3 {
+           height: 14px;
+           padding: 1px;
+       }
+       #heading {
+           text-align: center;
+       }
+       #title {
+           font-size: 20px;
+           font-weight: bold;
+       }
+       #subtitle {
+           font-size: 15px;
+           style: bold;
+       }
+       #next {
+           width: 40px;
+           text-align: center;
+       }
+       #error {
+           font-weight: bold;
+       }
+   </style>
+   <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+   <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+ </head>
+ <body>
+   <div id="content">
+       <div id="heading">
+           <div id="title">Shakespearean Greed</div>
+           <div id="subtitle">An adventure filled with hard decisions.</div>
+       </div>
+       <br></br>
+       <div id="inter">
+           <div id="info"></div>
+           <div id="question"></div>
+           <div id="error"></div>
+           <form>
+               <div id="answers">
+                   <input type="button" id="option1"  onClick="click1()"></input>
+                   <input type="button" id="option2" onClick="click2()"></input>
+                   <input type="button" id="option3" onClick="click3()"></input>
+               </div>
+               <input type="button" id="next" value="Next" onclick="fNext()">
+               </input>
+           </form>
+       </div>
+   </div>
+   <script type="text/javascript">
+       //<![CDATA[
+           var greed = 0;
+           var ans1 = " ";
+           var ans2 = " ";
+           var ans3 = " ";
+           var clickNext = true;
+           var clickOption = false;
+           var length = 0;
+           var end = 0;
+           document.getElementById('info').innerHTML="You are the average individual. You work hours on end in a dead-end job. Without change, you will do this for the rest of your life. Click next to continue.";
+           function colorChange (greedNum) {
+               switch (greedNum) {
+                   case 1:
+                       $('body').css('background-color','#eeeeee');
+                       $('body').css('color','#110000');
+                       $('#option, button').css('border','1px solid #110000');
+                       break;
+                   case 2:
+                       $('body').css('background-color','#dddddd');
+                       $('body').css('color','#220000');
+                       $('#option, button').css('border','1px solid #220000');
+                       break;
+                   case 3:
+                       $('body').css('background-color','#cccccc');
+                       $('body').css('color','#330000');
+                       $('#option, button').css('border','1px solid #330000');
+                       break;
+                   case 4:
+                       $('body').css('background-color','#bbbbbb');
+                       $('body').css('color','#440000');
+                       $('#option, button').css('border','1px solid #440000');
+                       break;
+                   case 5:
+                       $('body').css('background-color','#aaaaaa');
+                       $('body').css('color','#550000');
+                       $('#option, button').css('border','1px solid #550000');
+                       document.getElementById('info').innerHTML="You are starting to move up in the world. Rumors tell a promotion might be in store for you. Nice perks begin to spring up, however many people around begin to look at you differently.";
+                       break;
+                   case 6:
+                       $('body').css('background-color','#999999');
+                       $('body').css('color','#660000');
+                       $('#option, button').css('border','1px solid #660000');
+                       break;
+                   case 7:
+                       $('body').css('background-color','#888888');
+                       $('body').css('color','#770000');
+                       $('#option, button').css('border','1px solid #770000');
+                       break;
+                   case 8:
+                       $('body').css('background-color','#777777');
+                       $('body').css('color','#880000');
+                       $('#option, button').css('border','1px solid #880000');
+                       break;
+                   case 9:
+                       $('body').css('background-color','#666666');
+                       $('body').css('color','#990000');
+                       $('#option, button').css('border','1px solid #990000');
+                       break;
+                   case 10:
+                       $('body').css('background-color','#555555');
+                       $('body').css('color','#aa0000');
+                       $('#option, button').css('border','1px solid #aa0000');
+                       document.getElementById('info').innerHTML="A few promotions have come your way and you are eagerly moving up the corperate ladder. You walk into work everyday in a designer suit. But you are starting to feel the power in your hands and love it. You want more. A desire for more.";
+                       break;
+                   case 11:
+                       $('body').css('background-color','#444444');
+                       $('body').css('color','#bb0000');
+                       $('#option, button').css('border','1px solid #bb0000');
+                       break;
+                   case 12:
+                       $('body').css('background-color','#333333');
+                       $('body').css('color','#cc00000');
+                       $('#option, button').css('border','1px solid #cc0000');
+                       break;
+                   case 13:
+                       $('body').css('background-color','#222222');
+                       $('body').css('color','#dd00000');
+                       $('#option, button').css('border','1px solid #dd0000');
+                       break;
+                   case 14:
+                       $('body').css('background-color','#111111');
+                       $('body').css('color','#ee00000');
+                       $('#option, button').css('border','1px solid #ee0000');
+                       break;
+                   default:
+                       $('body').css('background-color','#000000');
+                       $('body').css('color','#ff0000');
+                       $('#option, button').css('border','1px solid #ff0000');
+                       break;
+               }
+           }
+           function click1() {
+               if (clickOption) {
+                   document.getElementById('option1').value="";
+                   document.getElementById('option2').value="";
+                   document.getElementById('option3').value="";
+                   document.getElementById('question').innerHTML=ans1;
+                   clickNext=true;
+                   clickOption = false;
+                   document.getElementById('error').innerHTML=" ";
+                   length++
+               } else {
+                   document.getElementById('error').innerHTML="Please click next to continue.";
+               }
+           }
+           function click2() {
+               if (clickOption) {
+                   document.getElementById('option1').value="";
+                   document.getElementById('option2').value="";
+                   document.getElementById('option3').value="";
+                   document.getElementById('question').innerHTML=ans2;
+                   greed += 1;
+                   colorChange(greed);
+                   clickNext = true;
+                   clickOption = false;
+                   length++
+                   document.getElementById('error').innerHTML=" ";
+               } else {
+                   document.getElementById('error').innerHTML="Please click next to continue."
+               }
+           }
+           function click3() {
+               if (clickOption) {
+                   document.getElementById('option1').value="";
+                   document.getElementById('option2').value="";
+                   document.getElementById('option3').value="";
+                   document.getElementById('question').innerHTML=ans3;
+                   greed += 2;
+                   colorChange(greed);
+                   clickNext = true;
+                   clickOption = false;
+                   document.getElementById('error').innerHTML=" ";
+                   length++
+               } else { 
+                   document.getElementById('error').innerHTML="Please click next to continue."
+
+               }
+           }
+           function fNext() {
+               if (clickNext) {
+                       document.getElementById('error').innerHTML=" ";
+                   if (greed >=15) {
+                       end = length;
+                       length = 21;
+                   }
+                   if (length >= 20) {
+                       clickNext = false;
+                   clickOption = false;
+                       if (end <= 10 && end !==0) {
+                           document.getElementById('info').innerHTML="The grin you wore on yor face became your death sentance. Dozens looked up to you and say evil behind your eyes. At 33, your life was ended. By who? It is unclear because any number of your employees had the motivation.";
+                       } else if (end <=19) {
+                           document.getElementById('info').innerHTML="While at first, it was well consealed, your greed began to show through. A sudden allergic reaction caused your death at 57. While never being allergic to anything before, it is unclear as to what exactly killed one. One thing is for certain: everyone cheered at the news of your passing.";
+                       } else if (end===0 && greed<=5) {
+                           document.getElementById('info').innerHTML="Years passed and you quietly spent your days helping others, as always. When you passed in your speel, everyone was devestated. Your funeral had a record attendance and you will be missed by all.";
+                       } else if (end===0 && greed<=10) {
+                           document.getElementById('info').innerHTML="You were remembered fondly as one who did not ask for much. Every now and then, you would help yourself, but everyone does. You lived to see a ripe old age, which was celebrated to those around you.";
+                       } else {
+                           document.getElelmentById('info').innerHTML="Greed was in the depths of your soul, but you suppressed it as much as possible. While there were few around you that loved you, you did not make many enemies in your life time and a handful of people will miss you.";
+                       }
+                   } else {
+                       clickNext = false;
+                   clickOption = true;
+                       switch(length) {
+                           case 0:
+                               document.getElementById('question').innerHTML="You arrive at work and park in the parking garage. As you walk down the stairs, you notice $100 lying on the concrete.";
+                               document.getElementById('option1').value="Pick it up and bring it to the secretary, someone will be missing it and claim it.";
+                               document.getElementById('option2').value="Bring it up to your office and announce that you found the money. If the individual goes to you, you will at least get some credit and maybe some reward.";
+                               document.getElementById('option3').value="If someone were to need this money, they would have already found it. Put it in your pocket and use to buy yourself something nice.";
+                               ans1 = "You bring it to the secratery, who gladly takes it. Later, you ask if someone claimed it and the secratery tells you, 'Yes, its owner was found.'";
+                               ans2 = "Your boss quietly comes up to you and informs you it was his money. You give him the $100 dollars. The next day, a large candy bar sits on your desk: a reward from your boss.";
+                               ans3 = "The day goes by uneventfully. On your way home, you stop by the nearest walmart and get yourself a nice watch, which your colleges notice the next day.";
+                               break;
+                           case 1:
+                               document.getElementById('question').innerHTML="The mailman came by and put a few envolopes into your mailbox. You pick up the letters and bring them inside. Opening the first one, there is a small letter and 3 $20 bills. The first line of the letter reads, 'Dear Steve.' You look at the envolope and realize it is addressed to your neighbor.";
+                               document.getElementById('option1').value="Replace the money and letter and walk the letter over to your neighbor in person.";
+                               document.getElementById('option2').value="You only need $20 for new book you want. Just take 1 of the $20 bills out and replace the rest in the envolope. Your neightbor still gets their reward and you get the book you want.";
+                               document.getElementById('option3').value="Toss out the envolope, and keep the $60 for yourself. Steve has more money than you, so he will not mind.";
+                               ans1 = "Your neighbor smiles warmly when he sees you. He is an older gentleman who does not get much company, and getting to talk to you makes his day.";
+                               ans2 = "You place the envolope into Steve's mailbox the next morning and never think about it again.";
+                               ans3 = "The $60 was well spent, while Steven never suspected a thing. You got the best part of the deal.";
+                               break;
+                           case 2:
+                               document.getElementById('question').innerHTML="A large gift basket was sent to your boss.  The card was missing. Your boss asked you if you know who sent it.";
+                               document.getElementById('option1').value="You overheard two of your co-workers talking about it earlier, so you give your boss their names. They deserve the credit.";
+                               document.getElementById('option2').value="If they did not leave a card, they clearly do not want credit. You just tell your boss you do not know, so no one gets special treatment.";
+                               document.getElementById('option3').value="You could use some brownie points, so you tell your boss you sent it. There is no way anyone can disprove that.";
+                               ans1 = "The next day, you find that both of your co-workers were given promotions because of the gift basket, all thanks to you giving them credit.";
+                               ans2 = "Your boss never mentioned it again, but he was in a generous mood for the next day.";
+                               ans3 = "Your boss smiles on you and says that you should get a raise for being so nice to him.";
+                               break;
+                           case 3:
+                               document.getElementById('question').innerHTML="A college tells you that they will not come into work the next day because your boss must see their presentation and they do not have it ready. The next day, your boss asks you if you know where your college is.";
+                               document.getElementById('option1').value="Confirm that your college is sick. He will not get in trouble and you would not want to see someone struggle.";
+                               document.getElementById('option2').value="Just tell your boss that you do not know. Your boss is suspicious, but you will not be dragged in.";
+                               document.getElementById('option3').value="Tell the truth: he skipped work because of the presentation. You should never lie.";
+                               ans1 = "Your college is praised for his wonderful presentation the next day. Without you covering for him, your boss would have been pretty mad.";
+                               ans2 = "Your boss eyes your college suspiciously but does not say anything. Neither of you were rewarded, but neither of you got in trouble.";
+                               ans3 = "You find that your college had skipped work for the last time and was fired. You, on the other hand, received a raise.";
+                               break;
+                           case 4:
+                               document.getElementById('question').innerHTML="A fire alarm sounds during work and everyone is to evacuate the building. As the supervisor, you are in charge of making sure everyone gets out and should be the last person to leave.";
+                               document.getElementById('option1').value="Quickly walk around to make sure everyone is out, then quickly leave yourself.";
+                               document.getElementById('option2').value="Do not do your job, get out of there! No one expects the supervisor to stay. There could be a fire!";
+                               document.getElementById('option3').value="Stay in the building as everyone leaves. There is clearly no fire alarm, but everyone has to leave. While they are outside, you can look around and see if there is anything of value.";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 5:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 6:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 7:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 8:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 9:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 10:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 11:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 12:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 13:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 14:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 15:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 16:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 17:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 18:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           case 19:
+                               document.getElementById('question').innerHTML="";
+                               document.getElementById('option1').value="";
+                               document.getElementById('option2').value="";
+                               document.getElementById('option3').value="";
+                               ans1 = "";
+                               ans2 = "";
+                               ans3 = "";
+                               break;
+                           default:
+                               document.getElementById('question').innerHTML="ERROR";
+                               document.getElementById('option1').value="ERROR";
+                               document.getElementById('option2').value="ERROR";
+                               document.getElementById('option3').value="ERROR";
+                               ans1 = "ERROR";
+                               ans2 = "ERROR";
+                               ans3 = "ERROR";
+                       }
+                   }
+               } else {
+                   document.getElementById('error').innerHTML="Please select an option to continue."
+               }
+           }
+       //]]>
+   </script>
+ </body>
