@@ -6,7 +6,7 @@
        body {
            background: #ffffff;
            color: #000000;
-           font-size: 12px;
+           font-size: 15px;
        }
        #content {
            margin: 5%;
@@ -14,26 +14,36 @@
            border-radius: 5px;
            padding: 5px;
        }
-       button {
+       input {
            border: 1px solid #000000;
            border-radius: 1px;
-           margin: 2px;
+           margin: auto;
+		   margin-top: 2px;
+		   margin-bottom: 2px;
+		   font-family: Times New Roman;
+		   font-size: 15px;
+		   display: block;
+		   opacity: .8;
+		   background: #ffffff;
+		   color: #000000;
        }
-       button:hover {
+       input:hover {
            opacity: 0.5;
-           background-color: #f7f7f7;
        }
        #option1 {
-           height: 14px;
+           height: 30px;
            padding: 1px;
+		   width: 88%;
        }
        #option2 {
-           height: 14px;
+           height: 30px;
            padding: 1px;
+		   width: 88%
        }
        #option3 {
-           height: 14px;
+           height: 30px;
            padding: 1px;
+		   width: 88%
        }
        #heading {
            text-align: center;
@@ -66,11 +76,13 @@
        <br></br>
        <div id="inter">
            <div id="info"></div>
+		   <br>
            <div id="question"></div>
+		   <br>
            <div id="error"></div>
            <form>
                <div id="answers">
-                   <input type="button" id="option1"  onClick="click1()"></input>
+                   <input type="button" id="option1" onClick="click1()"></input>
                    <input type="button" id="option2" onClick="click2()"></input>
                    <input type="button" id="option3" onClick="click3()"></input>
                </div>
@@ -89,85 +101,86 @@
            var clickOption = false;
            var length = 0;
            var end = 0;
-           document.getElementById('info').innerHTML="You are the average individual. You work hours on end in a dead-end job. Without change, you will do this for the rest of your life. Click next to continue.";
+		   var murder = false;
+           document.getElementById('info').innerHTML="You are the average individual. You work hours on end in a dead-end job. Without change, you will do this for the rest of your life.";
            function colorChange (greedNum) {
                switch (greedNum) {
                    case 1:
-                       $('body').css('background-color','#eeeeee');
-                       $('body').css('color','#110000');
-                       $('#option, button').css('border','1px solid #110000');
+                       $('body, input').css('background-color','#eeeeee');
+                       $('body, input').css('color','#110000');
+                       $('#content, input').css('border','1px solid #110000');
                        break;
                    case 2:
-                       $('body').css('background-color','#dddddd');
-                       $('body').css('color','#220000');
-                       $('#option, button').css('border','1px solid #220000');
+                       $('body, input').css('background-color','#dddddd');
+                       $('body, input').css('color','#220000');
+                       $('#content, input').css('border','1px solid #220000');
                        break;
                    case 3:
-                       $('body').css('background-color','#cccccc');
-                       $('body').css('color','#330000');
-                       $('#option, button').css('border','1px solid #330000');
+                       $('body, input').css('background-color','#cccccc');
+                       $('body, input').css('color','#330000');
+                       $('#content, input').css('border','1px solid #330000');
                        break;
                    case 4:
-                       $('body').css('background-color','#bbbbbb');
-                       $('body').css('color','#440000');
-                       $('#option, button').css('border','1px solid #440000');
+                       $('body, input').css('background-color','#bbbbbb');
+                       $('body, input').css('color','#440000');
+                       $('#content, input').css('border','1px solid #440000');
                        break;
                    case 5:
-                       $('body').css('background-color','#aaaaaa');
-                       $('body').css('color','#550000');
-                       $('#option, button').css('border','1px solid #550000');
+                       $('body, input').css('background-color','#aaaaaa');
+                       $('body, input').css('color','#550000');
+                       $('#content, input').css('border','1px solid #550000');
                        document.getElementById('info').innerHTML="You are starting to move up in the world. Rumors tell a promotion might be in store for you. Nice perks begin to spring up, however many people around begin to look at you differently.";
                        break;
                    case 6:
-                       $('body').css('background-color','#999999');
-                       $('body').css('color','#660000');
-                       $('#option, button').css('border','1px solid #660000');
+                       $('body, input').css('background-color','#999999');
+                       $('body, input').css('color','#660000');
+                       $('#content, input').css('border','1px solid #660000');
                        break;
                    case 7:
-                       $('body').css('background-color','#888888');
-                       $('body').css('color','#770000');
-                       $('#option, button').css('border','1px solid #770000');
+                       $('body, input').css('background-color','#888888');
+                       $('body, input').css('color','#770000');
+                       $('#content, input').css('border','1px solid #770000');
                        break;
                    case 8:
-                       $('body').css('background-color','#777777');
-                       $('body').css('color','#880000');
-                       $('#option, button').css('border','1px solid #880000');
+                       $('body, input').css('background-color','#777777');
+                       $('body, input').css('color','#880000');
+                       $('#content, input').css('border','1px solid #880000');
                        break;
                    case 9:
-                       $('body').css('background-color','#666666');
-                       $('body').css('color','#990000');
-                       $('#option, button').css('border','1px solid #990000');
+                       $('body, input').css('background-color','#666666');
+                       $('body, input').css('color','#990000');
+                       $('#content, input').css('border','1px solid #990000');
                        break;
                    case 10:
-                       $('body').css('background-color','#555555');
-                       $('body').css('color','#aa0000');
-                       $('#option, button').css('border','1px solid #aa0000');
+                       $('body, input').css('background-color','#555555');
+                       $('body, input').css('color','#aa0000');
+                       $('#content, input').css('border','1px solid #aa0000');
                        document.getElementById('info').innerHTML="A few promotions have come your way and you are eagerly moving up the corperate ladder. You walk into work everyday in a designer suit. But you are starting to feel the power in your hands and love it. You want more. A desire for more.";
                        break;
                    case 11:
-                       $('body').css('background-color','#444444');
-                       $('body').css('color','#bb0000');
-                       $('#option, button').css('border','1px solid #bb0000');
+                       $('body, input').css('background-color','#444444');
+                       $('body, input').css('color','#bb0000');
+                       $('#content, input').css('border','1px solid #bb0000');
                        break;
                    case 12:
-                       $('body').css('background-color','#333333');
-                       $('body').css('color','#cc00000');
-                       $('#option, button').css('border','1px solid #cc0000');
+                       $('body, input').css('background-color','#333333');
+                       $('body, input').css('color','#cc00000');
+                       $('#content, input').css('border','1px solid #cc0000');
                        break;
                    case 13:
-                       $('body').css('background-color','#222222');
-                       $('body').css('color','#dd00000');
-                       $('#option, button').css('border','1px solid #dd0000');
+                       $('body, input').css('background-color','#222222');
+                       $('body, input').css('color','#dd00000');
+                       $('#content, input').css('border','1px solid #dd0000');
                        break;
                    case 14:
-                       $('body').css('background-color','#111111');
-                       $('body').css('color','#ee00000');
-                       $('#option, button').css('border','1px solid #ee0000');
+                       $('body, input').css('background-color','#111111');
+                       $('body, input').css('color','#ee00000');
+                       $('#content, input').css('border','1px solid #ee0000');
                        break;
                    default:
-                       $('body').css('background-color','#000000');
-                       $('body').css('color','#ff0000');
-                       $('#option, button').css('border','1px solid #ff0000');
+                       $('body, input').css('background-color','#000000');
+                       $('body, input').css('color','#ff0000');
+                       $('#content, input').css('border','1px solid #ff0000');
                        break;
                }
            }
@@ -213,7 +226,7 @@
                    clickOption = false;
                    document.getElementById('error').innerHTML=" ";
                    length++
-               } else { 
+               } else {
                    document.getElementById('error').innerHTML="Please click next to continue."
 
                }
@@ -224,45 +237,46 @@
                    if (greed >=15) {
                        end = length;
                        length = 21;
+					   murder=true;
                    }
                    if (length >= 20) {
-                       clickNext = false;
-                   clickOption = false;
-                       if (end <= 10 && end !==0) {
-                           document.getElementById('info').innerHTML="The grin you wore on yor face became your death sentance. Dozens looked up to you and say evil behind your eyes. At 33, your life was ended. By who? It is unclear because any number of your employees had the motivation.";
-                       } else if (end <=19) {
-                           document.getElementById('info').innerHTML="While at first, it was well consealed, your greed began to show through. A sudden allergic reaction caused your death at 57. While never being allergic to anything before, it is unclear as to what exactly killed one. One thing is for certain: everyone cheered at the news of your passing.";
-                       } else if (end===0 && greed<=5) {
-                           document.getElementById('info').innerHTML="Years passed and you quietly spent your days helping others, as always. When you passed in your speel, everyone was devestated. Your funeral had a record attendance and you will be missed by all.";
-                       } else if (end===0 && greed<=10) {
+                        clickNext = false;
+						clickOption = false;
+                       if (end <= 10 && murder) {
+                           document.getElementById('info').innerHTML="The grin you wore on your face became your death sentence. Dozens looked up to you and saw evil behind your eyes. At 33, your life was ended. By who? It is unclear because any number of your employees had the motivation.";
+                       } else if (end <=19 && murder) {
+                           document.getElementById('info').innerHTML="While at first, it was well concealed, your greed began to show through. A sudden allergic reaction caused your death at 57. While never being allergic to anything before, it is unclear as to what exactly killed one. One thing is for certain: everyone cheered at the news of your passing.";
+                       } else if (murder===false && greed<=5 ) {
+                           document.getElementById('info').innerHTML="Years passed and you quietly spent your days helping others, as always. When you passed in your sleep, everyone was devastated. Your funeral had a record attendance and you will be missed by all.";
+                       } else if (murder===false && greed<=10) {
                            document.getElementById('info').innerHTML="You were remembered fondly as one who did not ask for much. Every now and then, you would help yourself, but everyone does. You lived to see a ripe old age, which was celebrated to those around you.";
                        } else {
                            document.getElelmentById('info').innerHTML="Greed was in the depths of your soul, but you suppressed it as much as possible. While there were few around you that loved you, you did not make many enemies in your life time and a handful of people will miss you.";
                        }
                    } else {
-                       clickNext = false;
-                   clickOption = true;
-                       switch(length) {
+                        clickNext = false;
+						clickOption = true;
+                        switch(length) {
                            case 0:
                                document.getElementById('question').innerHTML="You arrive at work and park in the parking garage. As you walk down the stairs, you notice $100 lying on the concrete.";
                                document.getElementById('option1').value="Pick it up and bring it to the secretary, someone will be missing it and claim it.";
                                document.getElementById('option2').value="Bring it up to your office and announce that you found the money. If the individual goes to you, you will at least get some credit and maybe some reward.";
                                document.getElementById('option3').value="If someone were to need this money, they would have already found it. Put it in your pocket and use to buy yourself something nice.";
-                               ans1 = "You bring it to the secratery, who gladly takes it. Later, you ask if someone claimed it and the secratery tells you, 'Yes, its owner was found.'";
+                               ans1 = "You bring it to the secretary, who gladly takes it. Later, you ask if someone claimed it and the secretary tells you, 'Yes, its owner was found.'";
                                ans2 = "Your boss quietly comes up to you and informs you it was his money. You give him the $100 dollars. The next day, a large candy bar sits on your desk: a reward from your boss.";
-                               ans3 = "The day goes by uneventfully. On your way home, you stop by the nearest walmart and get yourself a nice watch, which your colleges notice the next day.";
+                               ans3 = "The day goes by uneventfully. On your way home, you stop by the nearest Walmart and get yourself a nice watch, which your colleges notice the next day.";
                                break;
                            case 1:
-                               document.getElementById('question').innerHTML="The mailman came by and put a few envolopes into your mailbox. You pick up the letters and bring them inside. Opening the first one, there is a small letter and 3 $20 bills. The first line of the letter reads, 'Dear Steve.' You look at the envolope and realize it is addressed to your neighbor.";
+                               document.getElementById('question').innerHTML="The mailman came by and put a few envelopes into your mailbox. You pick up the letters and bring them inside. Opening the first one, there is a small letter and 3 $20 bills. The first line of the letter reads, 'Dear Steve.' You look at the envelope and realize it is addressed to your neighbor.";
                                document.getElementById('option1').value="Replace the money and letter and walk the letter over to your neighbor in person.";
-                               document.getElementById('option2').value="You only need $20 for new book you want. Just take 1 of the $20 bills out and replace the rest in the envolope. Your neightbor still gets their reward and you get the book you want.";
-                               document.getElementById('option3').value="Toss out the envolope, and keep the $60 for yourself. Steve has more money than you, so he will not mind.";
+                               document.getElementById('option2').value="You only need $20 for new book you want. Just take 1 of the $20 bills out and replace the rest in the envelope. Your neighbor still gets their reward and you get the book you want.";
+                               document.getElementById('option3').value="Toss out the envelope, and keep the $60 for yourself. Steve has more money than you, so he will not mind.";
                                ans1 = "Your neighbor smiles warmly when he sees you. He is an older gentleman who does not get much company, and getting to talk to you makes his day.";
-                               ans2 = "You place the envolope into Steve's mailbox the next morning and never think about it again.";
+                               ans2 = "You place the envelope into Steve's mailbox the next morning and never think about it again.";
                                ans3 = "The $60 was well spent, while Steven never suspected a thing. You got the best part of the deal.";
                                break;
                            case 2:
-                               document.getElementById('question').innerHTML="A large gift basket was sent to your boss.  The card was missing. Your boss asked you if you know who sent it.";
+                               document.getElementById('question').innerHTML="A large gift basket was sent to your boss. The card was missing. Your boss asked you if you know who sent it.";
                                document.getElementById('option1').value="You overheard two of your co-workers talking about it earlier, so you give your boss their names. They deserve the credit.";
                                document.getElementById('option2').value="If they did not leave a card, they clearly do not want credit. You just tell your boss you do not know, so no one gets special treatment.";
                                document.getElementById('option3').value="You could use some brownie points, so you tell your boss you sent it. There is no way anyone can disprove that.";
@@ -284,144 +298,144 @@
                                document.getElementById('option1').value="Quickly walk around to make sure everyone is out, then quickly leave yourself.";
                                document.getElementById('option2').value="Do not do your job, get out of there! No one expects the supervisor to stay. There could be a fire!";
                                document.getElementById('option3').value="Stay in the building as everyone leaves. There is clearly no fire alarm, but everyone has to leave. While they are outside, you can look around and see if there is anything of value.";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               ans1 = "Everyone makes it out of the building, thanks to your help. The firemen are glad for you.";
+                               ans2 = "You hurry out of the building as fire trucks arrive. Firemen bring a few stragglers out that you could have already had out of the building. Oh well. It is survival of the fittest.";
+                               ans3 = "You snatch up $400 before the firemen convince you to leave the building. When allowed to enter again, may people notice the missing money, but no one suspects you.";
                                break;
                            case 5:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="A bell ringer stands on the street as you walk to the store. He ask you for money, claiming it will go to children in need.";
+                               document.getElementById('option1').value="Give him a few bucks out of your wallet. Every penny count and you can give a child joy.";
+                               document.getElementById('option2').value="Ignore the man and keep moving. He doesn't seem very reliable. Besides, money is tight as it is.";
+                               document.getElementById('option3').value="Snatch up the can from the man and run off. It only had a few bucks and you could probably do more with it than a charity.";
+                               ans1 = "You give the man a few dollars, who smiles graciously.";
+                               ans2 = "You ignore them man as he rings the bell in your ear. With the money you did not give, you bought an extra bag of mini donuts.";
+                               ans3 = "You run off with the can and don't stop until you get several blocks away, where you dump the money into your pocket and discard the can. This will go towards your little nephew's birthday present.";
                                break;
                            case 6:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="You overhear your boss talking with someone else. Either you or the woman who is in the office next to you will receive a promotion.";
+                               document.getElementById('option1').value="Let the boss decide what he wishes. If you deserve the promotion, you will get it.";
+                               document.getElementById('option2').value="Stop by your boss's office after work and give him a candy bar. Buy him something nicer on your way to work and give it to him the next day. Just to show him you appreciate him.";
+                               document.getElementById('option3').value="Your competition is too tough, you need to stop them. You could easily cause her to fall down the stairs after work.";
+                               ans1 = "Your boss promotes the woman next to you after a couple of days. She must have truly deserved it.";
+                               ans2 = "Your boss appreciates the gifts and gives you a small raise, because he had no choice to give the actual promotion to the other woman.";
+                               ans3 = "Your rival falls down the stairs and breaks a few bones. She was out of work for a week, giving you the promotion.";
                                break;
                            case 7:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="A college spilt coffee on her computer and it broke. Because of this, the company gave her a brand new one to work on, which is much better than your old computer.";
+                               document.getElementById('option1').value="Use your old computer with dignity and grace. It still works and there is no need for you to get a new one.";
+                               document.getElementById('option2').value="Go up to your boss and politely ask if there are any better computers you could use.";
+                               document.getElementById('option3').value="Take matters into your own hands. You accidently knock your coffee over because you were not paying attention. And of course the computer won't work now.";
+                               ans1 = "Your Windows 98 computer continues on, although it may take 5 minutes before you can type a single word, at least you have a computer.";
+                               ans2 = "Your boss digs up a computer made in 2000. It is still ancient, but not as ancient as Windows 98.";
+                               ans3 = "You make an effort to 'save your computer', but it ultimately died. A brand new Dell XP was delivered to your office the very next day.";
                                break;
                            case 8:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="At the local school, they are having a career day. They ask if someone in the management could please come in and teach the kids what they do.";
+                               document.getElementById('option1').value="Volunteer your time like the good person you are and teach the kids what you can.";
+                               document.getElementById('option2').value="Let some other guy do it. You have more important things to do.";
+                               document.getElementById('option3').value="Get one of your buddies to do this. On that day, you tell your boss you are going with him and ditch work instead!";
+                               ans1 = "The kids eagerly listened to you, although it might be because they all wanted to get to the cool firefighter. But you still showed them your job.";
+                               ans2 = "You did not volunteer, nor did anyone else. Those kids probably did not want to hear you anyway.";
+                               ans3 = "You convinced the man in the office across the hall from you to do it. You called your boss the morning of the presentation and told him you were helping out. Instead, you went to Six Flags and a grand time.";
                                break;
                            case 9:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="Your company is trying to make a new advertisement and needs some of its employees to be in it.";
+                               document.getElementById('option1').value="Sit back and let them work. There are a lot of great people in the building that should be in it.";
+                               document.getElementById('option2').value="They call for anyone to be in the background because they want to show a lot of hard working people. Go volunteer.";
+                               document.getElementById('option3').value="When they start looking for someone to say some lines, go and find the right people. Try and get your face on the ad. Everyone will know you.";
+                               ans1 = "Many people on your floor are selected to be in the ad, but not you. That's okay because you have work to do anyway.";
+                               ans2 = "A large group of people are gathered out front and the camera quickly pans them. All you can see is the top of your head, but that is better than nothing.";
+                               ans3 = "You get five seconds of fame. You only have to say one line. But that one line made people on the street recognize your face.";
                                break;
                            case 10:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="A bird is trapped in the building and is flying around your floor, causing chaos.";
+                               document.getElementById('option1').value="Help gently lead the bird out of the window it flew in through. No one else is stepping up and everyone could use some help.";
+                               document.getElementById('option2').value="Do nothing. Just close your door and get back to work. People are making such a big deal of this.";
+                               document.getElementById('option3').value="Call security. You should not have to put up with this. Their job is to keep you safe and this bird is a danger to everyone.";
+                               ans1 = "Thanks to you, the bird safely gets out of the building and everyone can go back to their daily routine.";
+                               ans2 = "You close your door and get back to work. While everyone else panics, you finished your presentation, which pleased the boss.";
+                               ans3 = "Security rushes up to your floor, just to find the bird. Annoyed, they remove the bird. You sat back and let the men do your job. You could have just as easily done it, but you shouldn't have to.";
                                break;
                            case 11:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="Your boss has lost an incredibly important paper that apparently has a signature he needs on it. He is willing to give anyone who finds it a reward.";
+                               document.getElementById('option1').value="Look around for it, see if it is in your office. When you do not find it, you have no choice to give up. You have done your duty.";
+                               document.getElementById('option2').value="Search through every paper stack you can find until you find the paper. You need to stay on your boss's good side and doing this would definably help.";
+                               document.getElementById('option3').value="Rather than try to find it, print out the form and forge the signature. He already actually had the signature, so what difference does it make?";
+                               ans1 = "You come up with nothing, but you tried your best. Oh well. What can you do?";
+                               ans2 = "You spent the entire day looking for it and bring the paper to your boss. You tell your tragic story of trying to find it and as a result, your boss gives you a nice pay raise.";
+                               ans3 = "You promptly bring the signed paper to your boss. He is delighted by the signed paper and gives you a nice chunk of change as a reward. It took no effort and you got a decent reward.";
                                break;
                            case 12:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="A dinner party for work is supposed to be on Friday night. They have a large buffet, including shrimp and other delicacies.";
+                               document.getElementById('option1').value="You ate before you came, so you have no need to eat again. Skip the buffet. It looks like they are already starting to run low on some food as it is.";
+                               document.getElementById('option2').value="Eat a nice meal. That is the point of the party. Have your share.";
+                               document.getElementById('option3').value="Eat more than your fair share. At the end, wrap up some shrimp in a napkin and place it in your pocket. This will be good for later.";
+                               ans1 = "You skip the buffet, limiting what you eat. Good thing, cause a few people got sick on the shrimp.";
+                               ans2 = "You eat your heart out. It'd free food that you could use. As it is, there is nothing left in your fridge.";
+                               ans3 = "You eat plenty and bring plenty more home. It is sufficient for your next meal as well. Some people complained because they did not get any food, but it is there fault for showing up late.";
                                break;
                            case 13:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="Each of your co-workers are to make a two minute presentation to a board of executives because they need to choose a new administrator.";
+                               document.getElementById('option1').value="Do not present yourself. You are satisfied where you are and will get a promotion when you earn one.";
+                               document.getElementById('option2').value="Go and present for two minutes, show your colors. What's the harm?";
+                               document.getElementById('option3').value="Since there is only an hour total, you go well over your time limit and show just how awesome you are. Because of this, the last few people cannot go.";
+                               ans1 = "You continue working at the same level. Someone you did not know got the promotion and was thrilled.";
+                               ans2 = "You get a note that thanked you, but politely told you that there was a better candidate. At least you tried and would be in consideration in the future.";
+                               ans3 = "Since they barely heard anyone else, the board of executives had no choice but to give you the promotion. A new bigger office, a nice shiny computer, a reserved parking space, and a nice raise all came with it.";
                                break;
                            case 14:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="A terrible snow storm is coming. You head out to get your bread and water.";
+                               document.getElementById('option1').value="Go and grab one gallon of water and one loaf of bread. It should hopefully be sufficient. Besides, the grocery store does not have much left.";
+                               document.getElementById('option2').value="Grab two of each. That is how much you normally go through. You shouldn't have to limit yourself to less than what you need.";
+                               document.getElementById('option3').value="There are only 4 loaves of bread left. When remembering the storm of '78, you figure it is best to take all 4. Then there is no doubt you will be okay.";
+                               ans1 = "You purchase one of each and go through both of them. You could have used more, but that is okay. Because other families also had what they needed.";
+                               ans2 = "You go through most of both, having a little left. Good thing you bought both.";
+                               ans3 = "Yeah, you had some left over, but at least you were safe rather than sorry. It's for the best.";
                                break;
                            case 15:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="Your favorite band is coming to town and you have to get tickets!";
+                               document.getElementById('option1').value="Go online and buy your tickets. Yeah, they are expensive, but it will be worth it.";
+                               document.getElementById('option2').value="Go and find cheaper tickets on the internet. Technically, it is illegal to buy tickets from other people, but who cares. You got tickets.";
+                               document.getElementById('option3').value="When looking at the tickets, you see a sweepstakes in which you enter your email to get a pair of tickets. You are supposed to only enter once, but you create plenty of Gmail accounts and enter several dozen times.";
+                               ans1 = "Several hundred dollars later, you get seats in the way back. It's better than nothing.";
+                               ans2 = "For only a couple hundred bucks, you buy decent seats. You later find out your seller got arrested, but who cares. You are still going!";
+                               ans3 = "Your 54th entry actually wins. Not only did you not pay a dime, you have backstage passes to meet your favorite band. How much better can your life get?";
                                break;
                            case 16:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="You go to your local gym, where there are a limited number of weights.";
+                               document.getElementById('option1').value="Take only one weight. That's all you really need, right?";
+                               document.getElementById('option2').value="Take two or three. You are going to need to use the different sizes for different exercises. If you don't you will not be able to get a good workout.";
+                               document.getElementById('option3').value="Take two of each of the three sizes. You have a lot to do and need all of the weights. There is no other substitute.";
+                               ans1 = "The one weight you took was not heavy enough for some of your exercises, but you still had a decent workout.";
+                               ans2 = "You got through most of what you wanted to. Good thing you grabbed those weights.";
+                               ans3 = "You didn't even need all those weights! You didn't know that and can fix it next time. Oh well.";
                                break;
                            case 17:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="Your friend just started a job at your company and asks if you could help them.";
+                               document.getElementById('option1').value="Of course help them, they are your friend.";
+                               document.getElementById('option2').value="You have too much to do, but get someone else to help them.";
+                               document.getElementById('option3').value="Ignore them and just keep doing your job. They can figure it out by himself.";
+                               ans1 = "Hours of work and they sort of start to get what they have to do.";
+                               ans2 = "You find a college that is willing to help your friend. They are a little mad at you, but you still get your work done and they still get trained.";
+                               ans3 = "You ignore the messages and emails from them and just keep working. Your friend can handle himself.";
                                break;
                            case 18:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="A burglar broke into your apartment complex last night. A few people have reported broken windows and stolen possessions.";
+                               document.getElementById('option1').value="Before work, go and help clean up the broken glass. It is the least you can do.";
+                               document.getElementById('option2').value="Ignore the people in the lobby and hurry on to work. You have so much to do and need all the time you can get.";
+                               document.getElementById('option3').value="Report to the police that you lost a few items as well. Hide a few valuables for a few weeks until you get compensation.";
+                               ans1 = "You are one of the many volunteers who helped clean the glass. You were an hour late to work, but that's okay.";
+                               ans2 = "You push through the lobby and get to work. Even though this happened, you cannot let it control your whole day.";
+                               ans3 = "You hide some of your grandmother's jewelry and claim it to be stolen. A check later comes for a few thousand dollars.";
                                break;
                            case 19:
-                               document.getElementById('question').innerHTML="";
-                               document.getElementById('option1').value="";
-                               document.getElementById('option2').value="";
-                               document.getElementById('option3').value="";
-                               ans1 = "";
-                               ans2 = "";
-                               ans3 = "";
+                               document.getElementById('question').innerHTML="You were supposed to have a presentation finished for today, but you did not get a chance to finish.";
+                               document.getElementById('option1').value="Confess your mistake. Your boss will not be happy, but what else can you do?";
+                               document.getElementById('option2').value="Since the presentation is on your computer, pull the plug on it and tell your boss that you finished it, but your computer broke so you cannot access it.";
+                               document.getElementById('option3').value="Go into the internet and pull a presentation you found offline. Change the name on the title slide and you are good to go.";
+                               ans1 = "Your boss scolds you and tells you to have it done by tomorrow. Relieved, you readily agree.";
+                               ans2 = "It took IT quite some time before they found the error on your computer. By that time, you finished the presentation on a laptop, so there was no harm done.";
+                               ans3 = "You gave a nice presentation of some crazy thing you found off the internet. Who cares? You did your job.";
                                break;
                            default:
                                document.getElementById('question').innerHTML="ERROR";
