@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+	<head profile="http://www.w3.org/2005/10/profile">
+		<meta http-equiv="X-UA-Compatible" content="chrome=1" />
+		<meta name="description" content="The Road to the Civil War" />
+		<title>The Road to the Civil War</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<style>
+			body {
+				background: #faf9f5;
+			}
+			#content {
+				border: 3px solid black;
+				background-image: url('http://i57.tinypic.com/m7clk2.png');
+				margin: auto;
+				height: 250px;
+				width: 1250px;
+			}
+			#info {
+				border: 3px solid black;
+				width: 1247px;
+				height: 300px;
+				margin: auto;
+				padding: 2px;
+				text-align: center;
+			}
+			.active {
+				border-radius: 25px;
+				border: 5px black solid;
+				background: #008000;
+				width: 15px;
+				height: 15px;
+				padding: 5px;
+				font-size: 15px;
+				position: absolute;
+			}
+			.current {
+				border-radius: 25px;
+				border: 5px #FFD700 solid;
+				background: #FFFF00;
+				width: 15px;
+				height: 15px;
+				padding: 5px;
+				font-size: 15px;
+				position: absolute;
+			}
+			#one {
+				margin-top: 110px;
+				margin-left: 71px;
+			}
+			#two {
+				margin-top: 110px;
+				margin-left: 146px;
+			}
+			#three {
+				margin-top: 110px;
+				margin-left: 221px;
+			}
+			#four {
+				margin-top: 110px;
+				margin-left: 297px;
+			}
+			#five {
+				margin-top: 110px;
+				margin-left: 372px;
+			}
+			#six {
+				margin-top: 110px;
+				margin-left: 447px;
+			}
+			#seven {
+				margin-top: 110px;
+				margin-left: 522px;
+			}
+			#eight {
+				margin-top: 110px;
+				margin-left: 598px;
+			}
+			#nine {
+				margin-top: 110px;
+				margin-left: 673px;
+			}
+			#ten {
+				margin-top:110px;
+				margin-left: 748px;
+			}
+			#eleven {
+				margin-top: 110px;
+				margin-left: 823px;
+			}
+			#twelve {
+				margin-top: 110px;
+				margin-left: 900px;
+			}
+			#thirteen {
+				margin-top: 110px;
+				margin-left: 977px;
+			}
+			#fourteen {
+				margin-top: 110px;
+				margin-left: 1054px;
+			}
+		</style>
+		<link rel="icon" type="image/png" href="http://www.rootsweb.ancestry.com/~mecreadf/civilwar.gif">
+	</head>
+	<body>
+		<div id="info">
+		</div>
+		<div id="content">
+			<div id="one" class="active">
+				1
+			</div>
+			<div id="two" class="active">
+				2
+			</div>
+			<div id="three" class="active">
+				3
+			</div>
+			<div id="four" class="active">
+				4
+			</div>
+			<div id="five" class="active">
+				5
+			</div>
+			<div id="six" class="active">
+				6
+			</div>
+			<div id="seven" class="active">
+				7
+			</div>
+			<div id="eight" class="active">
+				8
+			</div>
+			<div id="nine" class="active">
+				9
+			</div>
+			<div id="ten" class="active">
+				10
+			</div>
+			<div id="eleven" class="active">
+				11
+			</div>
+			<div id="twelve" class="active">
+				12
+			</div>
+			<div id="thirteen" class="active">
+				13
+			</div>
+			<div id="fourteen" class="active">
+				14
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				document.getElementById('info').innerHTML= "";
+				var $last = $('#one');
+				$('#one').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#one').addClass('current');
+					$('#one').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#one');
+				});
+				$('#two').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#two').addClass('current');
+					$('#two').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#two');
+				});
+				$('#three').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#three').addClass('current');
+					$('#three').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#three');
+				});
+				$('#four').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#four').addClass('current');
+					$('#four').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#four');
+				});
+				$('#five').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#five').addClass('current');
+					$('#five').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#five');
+				});
+				$('#six').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#six').addClass('current');
+					$('#six').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#six');
+				});
+				$('#seven').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#seven').addClass('current');
+					$('#seven').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#seven');
+				});
+				$('#eight').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#eight').addClass('current');
+					$('#eight').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#eight');
+				});
+				$('#nine').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#nine').addClass('current');
+					$('#nine').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#nine');
+				});
+				$('#ten').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#ten').addClass('current');
+					$('#ten').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#ten');
+				});
+				$('#eleven').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#eleven').addClass('current');
+					$('#eleven').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#eleven');
+				});
+				$('#twelve').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#twelve').addClass('current');
+					$('#twelve').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#twelve');
+				});
+				$('#thirteen').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#thirteen').addClass('current');
+					$('#thirteen').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#thirteen');
+				});
+				$('#fourteen').click(function() {
+					$last.addClass('active');
+					$last.removeClass('current');
+					$('#fourteen').addClass('current');
+					$('#fourteen').removeClass('active');
+					document.getElementById('info').innerHTML="";
+					$last = $('#fourteen');
+				});
+			});
+		</script>
+	</body>
+</html>
