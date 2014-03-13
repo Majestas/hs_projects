@@ -18,6 +18,9 @@
 				height: 250px;
 				width: 1250px;
 			}
+			#title {
+				text-align: center;
+			}
 			#info {
 				border: 3px solid black;
 				width: 1247px;
@@ -106,6 +109,10 @@
 		<link rel="icon" type="image/png" href="http://www.rootsweb.ancestry.com/~mecreadf/civilwar.gif">
 	</head>
 	<body>
+		<div id="title">
+			<h2>Road to the Civil Road</h2>
+			<p>By Katie A., Srayva A., Kim T., Emily W. and Maya W.</p>
+		</div>
 		<div id="info">
 		</div>
 		<div id="content">
@@ -154,14 +161,14 @@
 		</div>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				document.getElementById('info').innerHTML= "";
+				document.getElementById('info').innerHTML= "Click any event on the time line to get started!";
 				var $last = $('#one');
 				$('#one').click(function() {
 					$last.addClass('active');
 					$last.removeClass('current');
 					$('#one').addClass('current');
 					$('#one').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Underground Railroad</h6><br />";
 					$last = $('#one');
 				});
 				$('#two').click(function() {
@@ -169,7 +176,7 @@
 					$last.removeClass('current');
 					$('#two').addClass('current');
 					$('#two').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Wilmont Proviso</h6><br />";
 					$last = $('#two');
 				});
 				$('#three').click(function() {
@@ -177,7 +184,7 @@
 					$last.removeClass('current');
 					$('#three').addClass('current');
 					$('#three').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Compromise of 1860</h6><br />";
 					$last = $('#three');
 				});
 				$('#four').click(function() {
@@ -185,7 +192,7 @@
 					$last.removeClass('current');
 					$('#four').addClass('current');
 					$('#four').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Fugitive Slave Act</h6><br />";
 					$last = $('#four');
 				});
 				$('#five').click(function() {
@@ -193,7 +200,7 @@
 					$last.removeClass('current');
 					$('#five').addClass('current');
 					$('#five').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Personal Libery Laws</h6><br />";
 					$last = $('#five');
 				});
 				$('#six').click(function() {
@@ -201,7 +208,7 @@
 					$last.removeClass('current');
 					$('#six').addClass('current');
 					$('#six').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6><em>Uncle Tom's Cabin</em></h6><br />";
 					$last = $('#six');
 				});
 				$('#seven').click(function() {
@@ -209,7 +216,7 @@
 					$last.removeClass('current');
 					$('#seven').addClass('current');
 					$('#seven').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Kansas-Nebraska Act</h6><br />";
 					$last = $('#seven');
 				});
 				$('#eight').click(function() {
@@ -217,7 +224,7 @@
 					$last.removeClass('current');
 					$('#eight').addClass('current');
 					$('#eight').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Sack of Lawrence</h6><br />";
 					$last = $('#eight');
 				});
 				$('#nine').click(function() {
@@ -225,7 +232,7 @@
 					$last.removeClass('current');
 					$('#nine').addClass('current');
 					$('#nine').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Sumner Attacked by Preston</h6><br />";
 					$last = $('#nine');
 				});
 				$('#ten').click(function() {
@@ -233,7 +240,7 @@
 					$last.removeClass('current');
 					$('#ten').addClass('current');
 					$('#ten').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Pottawatomie Massacre</h6><br />";
 					$last = $('#ten');
 				});
 				$('#eleven').click(function() {
@@ -241,7 +248,7 @@
 					$last.removeClass('current');
 					$('#eleven').addClass('current');
 					$('#eleven').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Lecompton Constitution Crisis</h6><br />";
 					$last = $('#eleven');
 				});
 				$('#twelve').click(function() {
@@ -249,7 +256,7 @@
 					$last.removeClass('current');
 					$('#twelve').addClass('current');
 					$('#twelve').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6><em>Dead Scott</em> Case</h6><br />";
 					$last = $('#twelve');
 				});
 				$('#thirteen').click(function() {
@@ -257,7 +264,7 @@
 					$last.removeClass('current');
 					$('#thirteen').addClass('current');
 					$('#thirteen').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Harper's Ferry</h6><br />";
 					$last = $('#thirteen');
 				});
 				$('#fourteen').click(function() {
@@ -265,7 +272,7 @@
 					$last.removeClass('current');
 					$('#fourteen').addClass('current');
 					$('#fourteen').removeClass('active');
-					document.getElementById('info').innerHTML="";
+					document.getElementById('info').innerHTML="<h6>Election of 1860</h6><br />";
 					$last = $('#fourteen');
 				});
 			});
