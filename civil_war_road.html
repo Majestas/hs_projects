@@ -11,20 +11,28 @@
 			body {
 				background: #faf9f5;
 			}
-			#content {
-				border: 3px solid black;
-				background-image: url('http://i57.tinypic.com/m7clk2.png');
+			#content1 {
+				border-right: 3px solid black;
+				border-left: 3px solid black;
+				background-image: url('http://imageshack.com/a/img823/905/6hi5.png');
 				margin: auto;
-				height: 250px;
-				width: 1250px;
+				height: 175px;
+				width: 594px;
+			}
+			#content2 {
+				border: 3px solid black;
+				background-image: url('http://imageshack.com/a/img600/1024/d8hf.png');
+				margin: auto;
+				height: 175px;
+				width: 594px;
 			}
 			#title {
 				text-align: center;
 			}
 			#info {
 				border: 3px solid black;
-				width: 1247px;
-				height: 300px;
+				width: 590px;
+				height: 275px;
 				margin: auto;
 				padding: 2px;
 				text-align: center;
@@ -79,31 +87,40 @@
 			}
 			#eight {
 				margin-top: 110px;
-				margin-left: 598px;
+				margin-left: 15px;
 			}
 			#nine {
 				margin-top: 110px;
-				margin-left: 673px;
+				margin-left: 90px;
 			}
 			#ten {
 				margin-top:110px;
-				margin-left: 748px;
+				margin-left: 165px;
 			}
 			#eleven {
 				margin-top: 110px;
-				margin-left: 823px;
+				margin-left: 240px;
 			}
 			#twelve {
 				margin-top: 110px;
-				margin-left: 900px;
+				margin-left: 317px;
 			}
 			#thirteen {
 				margin-top: 110px;
-				margin-left: 977px;
+				margin-left: 394px;
 			}
 			#fourteen {
 				margin-top: 110px;
-				margin-left: 1054px;
+				margin-left: 471px;
+			}
+			h4 {
+				margin: 1px;
+			}
+			h2 {
+				margin: 1px;
+			}
+			p {
+				margin: 1px;
 			}
 		</style>
 		<link rel="icon" type="image/png" href="http://www.rootsweb.ancestry.com/~mecreadf/civilwar.gif">
@@ -115,7 +132,7 @@
 		</div>
 		<div id="info">
 		</div>
-		<div id="content">
+		<div id="content1">
 			<div id="one" class="active">
 				1
 			</div>
@@ -137,6 +154,8 @@
 			<div id="seven" class="active">
 				7
 			</div>
+		</div>
+		<div id="content2">
 			<div id="eight" class="active">
 				8
 			</div>
@@ -168,7 +187,7 @@
 					$last.removeClass('current');
 					$('#one').addClass('current');
 					$('#one').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Underground Railroad</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Underground Railroad</h4><embed width='320' height='240' src='video01' type='application/x-shockwave-flash'></embed>";
 					$last = $('#one');
 				});
 				$('#two').click(function() {
@@ -176,7 +195,7 @@
 					$last.removeClass('current');
 					$('#two').addClass('current');
 					$('#two').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Wilmont Proviso</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Wilmont Proviso</h4><embed width='320' height='240' src='video02' type='application/x-shockwave-flash'></embed>";
 					$last = $('#two');
 				});
 				$('#three').click(function() {
@@ -184,7 +203,7 @@
 					$last.removeClass('current');
 					$('#three').addClass('current');
 					$('#three').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Compromise of 1860</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Compromise of 1860</h4><embed width='320' height='240' src='video03' type='application/x-shockwave-flash'></embed>";
 					$last = $('#three');
 				});
 				$('#four').click(function() {
@@ -192,7 +211,7 @@
 					$last.removeClass('current');
 					$('#four').addClass('current');
 					$('#four').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Fugitive Slave Act</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Fugitive Slave Act</h4><embed width='320' height='240' src='video04' type='application/x-shockwave-flash'></embed>";
 					$last = $('#four');
 				});
 				$('#five').click(function() {
@@ -200,7 +219,7 @@
 					$last.removeClass('current');
 					$('#five').addClass('current');
 					$('#five').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Personal Libery Laws</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Personal Libery Laws</h4><embed width='320' height='240' src='video05' type='application/x-shockwave-flash'></embed>";
 					$last = $('#five');
 				});
 				$('#six').click(function() {
@@ -208,7 +227,7 @@
 					$last.removeClass('current');
 					$('#six').addClass('current');
 					$('#six').removeClass('active');
-					document.getElementById('info').innerHTML="<h6><em>Uncle Tom's Cabin</em></h6><br />";
+					document.getElementById('info').innerHTML="<h4><em>Uncle Tom's Cabin</em></h4><embed width='320' height='240' src='video06' type='application/x-shockwave-flash'></embed>";
 					$last = $('#six');
 				});
 				$('#seven').click(function() {
@@ -216,7 +235,7 @@
 					$last.removeClass('current');
 					$('#seven').addClass('current');
 					$('#seven').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Kansas-Nebraska Act</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Kansas-Nebraska Act</h4><embed width='320' height='240' src='video07' type='application/x-shockwave-flash'></embed>";
 					$last = $('#seven');
 				});
 				$('#eight').click(function() {
@@ -224,7 +243,7 @@
 					$last.removeClass('current');
 					$('#eight').addClass('current');
 					$('#eight').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Sack of Lawrence</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Sack of Lawrence</h4><embed width='320' height='240' src='video08' type='application/x-shockwave-flash'></embed>";
 					$last = $('#eight');
 				});
 				$('#nine').click(function() {
@@ -232,7 +251,7 @@
 					$last.removeClass('current');
 					$('#nine').addClass('current');
 					$('#nine').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Sumner Attacked by Preston</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Sumner Attacked by Preston</h4><embed width='320' height='240' src='video09' type='application/x-shockwave-flash'></embed>";
 					$last = $('#nine');
 				});
 				$('#ten').click(function() {
@@ -240,7 +259,7 @@
 					$last.removeClass('current');
 					$('#ten').addClass('current');
 					$('#ten').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Pottawatomie Massacre</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Pottawatomie Massacre</h4><embed width='320' height='240' src='video10' type='application/x-shockwave-flash'></embed>";
 					$last = $('#ten');
 				});
 				$('#eleven').click(function() {
@@ -248,7 +267,7 @@
 					$last.removeClass('current');
 					$('#eleven').addClass('current');
 					$('#eleven').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Lecompton Constitution Crisis</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Lecompton Constitution Crisis</h4><embed width='320' height='240' src='video11' type='application/x-shockwave-flash'></embed>";
 					$last = $('#eleven');
 				});
 				$('#twelve').click(function() {
@@ -256,7 +275,7 @@
 					$last.removeClass('current');
 					$('#twelve').addClass('current');
 					$('#twelve').removeClass('active');
-					document.getElementById('info').innerHTML="<h6><em>Dead Scott</em> Case</h6><br />";
+					document.getElementById('info').innerHTML="<h4><em>Dead Scott</em> Case</h4><embed width='320' height='240' src='video12' type='application/x-shockwave-flash'></embed>";
 					$last = $('#twelve');
 				});
 				$('#thirteen').click(function() {
@@ -264,7 +283,7 @@
 					$last.removeClass('current');
 					$('#thirteen').addClass('current');
 					$('#thirteen').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Harper's Ferry</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Harper's Ferry</h4><embed width='320' height='240' src='video13' type='application/x-shockwave-flash'></embed>";
 					$last = $('#thirteen');
 				});
 				$('#fourteen').click(function() {
@@ -272,7 +291,7 @@
 					$last.removeClass('current');
 					$('#fourteen').addClass('current');
 					$('#fourteen').removeClass('active');
-					document.getElementById('info').innerHTML="<h6>Election of 1860</h6><br />";
+					document.getElementById('info').innerHTML="<h4>Election of 1860</h4><embed width='320' height='240' src='video14' type='application/x-shockwave-flash'></embed>";
 					$last = $('#fourteen');
 				});
 			});
