@@ -1,0 +1,80 @@
+body {
+	background: #DAB547;
+}
+#content {
+	border: 3px solid black;
+	background-image: url('http://img577.imageshack.us/img577/3816/rxxx.png');
+	margin-right: 5px;
+	height: 490px;
+	width: 800px;
+	float: left;
+}
+#info {
+	border: 3px solid black;
+	height: 490px;
+	width: 250px;
+	float: right;
+	padding: 2px;
+}
+.active {
+	border-radius: 25px;
+	border: 5px black solid;
+	background: #008000;
+	width: 15px;
+	height: 15px;
+	padding: 5px;
+	font-size: 15px;
+	position: absolute;
+}
+.current {
+	border-radius: 25px;
+	border: 5px #FFD700 solid;
+	background: #FFFF00;
+	width: 15px;
+	height: 15px;
+	padding: 5px;
+	font-size: 15px;
+	position: absolute;
+}
+.done {
+	border-radius: 25px;
+	border: 5px #696969 solid;
+	background: #A9A9A9;
+	width: 15px;
+	height: 15px;
+	padding: 5px;
+	font-size: 15px;
+	position: absolute;
+}
+#one {
+	margin-top: 230px;
+	margin-left: 480px;
+}
+#two {
+	margin-top: 175px;
+	margin-left: 390px;
+}
+#three {
+	margin-top: 65px;
+	margin-left: 305px;
+}
+#four {
+	margin-top: 100px;
+	margin-left: 200px;
+}
+#five {
+	margin-top: 60px;
+	margin-left: 50px;
+}
+#six {
+	margin-top: 70px;
+	margin-left: 125px;
+}
+#seven {
+	margin-top: 65px;
+	margin-left: 335px;
+}
+#eight {
+	margin-top: 230px;
+	margin-left: 510px;
+}
