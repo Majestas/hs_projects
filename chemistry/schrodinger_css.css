@@ -1,0 +1,101 @@
+body {
+	font-family: "Times New Roman", Times, serif;
+	background-image: url('http://img842.imageshack.us/img842/543/zes7.png');
+	background-repeat: repeat;
+	background-color: #fee274;
+	color: #000000;
+}
+#content {
+	height: 500px;
+	width: 950px;
+	border-style: outset;
+	border-color: #000000;
+	border-width: 15px;
+	margin: auto;
+	background-color: #feeca4;
+	background-image: url('http://img9.imageshack.us/img9/2558/unzk.png');
+	background-repeat: repeat;
+}
+img {
+	display: inline-block;
+}
+#title {
+	margin-left: 400px;
+	font-size: 18px;
+}
+#life {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 101px;
+}
+#bio {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 101px;
+}
+#achieve {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 101px;
+}
+#cat {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 101px;
+}
+#info {
+	border-color: #000000;
+	border-width: 3px;
+	border-style: ridge;
+	height: 125px;
+	width: 800px;
+	margin-left: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	background-color: #feeca4;
+	padding: 2px;
+}
+#equation {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 94px;
+}
+#movement {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 104px;
+}
+#particle {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 94px;
+}
+#model {
+	border-color: #000000;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: 94px;
+}
+p {
+	margin: 0px;
+	padding: 0 0 6px 0;
+}
+a:link {
+	text-decoration: underline;
+	color: #000000;
+}
+a:hover {
+	text-decoration: underline;
+	color: #cccccc;
+}
+a:visited {
+	text-decoration: none;
+	color: #000000;
+}
